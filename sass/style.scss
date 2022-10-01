@@ -23,7 +23,7 @@ body {
   left: 50%;
   min-height: 100%;
   transform: translateX(-50%);
-  max-width: 320px;
+  max-width: 420px;
   width: 100%;
   margin: 0 auto;
   background-color: #fff;
@@ -39,8 +39,7 @@ button {
   cursor: pointer;
 }
 
-.micon {
-  font-family: "Material Icons";
+@mixin icon {
   font-weight: normal;
   font-style: normal;
   font-size: 24px; /* Preferred icon size */
@@ -64,5 +63,12 @@ button {
   font-feature-settings: "liga";
 }
 
-@import "./login";
-@import "./alert";
+.micon {
+  @include icon;
+  font-family: "Material Icons";
+}
+
+.micon-o {
+  @include icon;
+  font-family: "Material Icons Outlined";
+}

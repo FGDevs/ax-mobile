@@ -3,3 +3,9 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin card($padding: 1rem) {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  padding: $padding;
+}

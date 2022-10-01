@@ -4,9 +4,108 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/home.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
-  <h1>Hi!</h1>
+  <main class="home">
+    <section class="header">
+      <div class="user">
+        <button class="user__profile">
+          <p class="micon">texture</p>
+        </button>
+        <p class="user__info">
+          Hi <span class="user__gender">Mr</span>.
+          <span class="user__name">User</span>
+        </p>
+      </div>
+      <div class="company">
+        <img class="company__logo" src="assets/logo/logo-ax.png" alt="company logo" />
+        <div>
+          <p class="company__name">ABANG EXPRESS</p>
+          <p class="company__address">
+            Jl. Raya Condet No 27.B, Kel. Balekambang, Kec. Kramat Jati, Kota Jakarta Timur,
+            Daerah Khusus Ibukota Jakarta, 13530, Indonesia
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="attendance">
+      <section class="date">
+        <p class="date__title">Absen Hari Ini</p>
+        <p class="date__now"></p>
+      </section>
+
+      <section class="schedule">
+        <!-- <section class="schedule__loading">
+          <div class="skeleton rounded"></div>
+        </section> -->
+        <!-- <section class="schedule" data-status="start">
+          <p class="schedule__title">Jadwal Absen</p>
+          <div class="schedule__time">
+            <div>
+              <p class="title">Jam Masuk</p>
+              <p class="detail">
+                <span class="micon">watch_later</span>
+                <span class="detail__hour">00:00</span>
+              </p>
+            </div>
+            <div>
+              <p class="title">Jam Pulang</p>
+              <p class="detail">
+                <span class="micon">watch_later</span>
+                <span class="detail__hour">00:00</span>
+              </p>
+            </div>
+          </div>
+          <button class="schedule__action" data-action="start">
+            Absen Masuk
+          </button>
+        </section>
+
+        <section class="schedule" data-status="end">
+          <button class="schedule__action" data-action="end">
+            Absen Pulang
+          </button>
+        </section> -->
+      </section>
+
+      <section class="history">
+        <div class="history__loading">
+          <div class="skeleton rounded"></div>
+        </div>
+        <!-- <div class="history__empty">
+          <img class="empty__illustration" src="/assets/images/i_calendar.png" alt="empty history illustration" />
+          <div>
+            <p class="empty__title">Riwayat</p>
+            <p class="empty__text">
+              Anda belum memiliki <br />
+              Riwayat Absen
+            </p>
+          </div>
+        </div> -->
+      </section>
+    </section>
+  </main>
+
+ 
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+  integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+  crossorigin="anonymous"></script>
+  <script src="assets/js/home.js"></script>
+  <script src="assets/js/models/schedule.js"></script>
+  <script src="assets/js/plugins/alert.js"></script>
+  <script src="assets/js/plugins/sidemenu/index.js"></script>
+  <script src="assets/js/plugins/sidemenu/menuProfile.js"></script>
+  <script src="assets/js/plugins/sidemenu/menuViewProfile.js"></script>
+  <script src="assets/js/utilities/dateUtilities.js"></script>
+  <script src="assets/js/utilities/numberUtilities.js"></script>
 </body>
 </html>

@@ -8,6 +8,9 @@ $(document).on("DOMContentLoaded", () => {
   const BUTTON_TOGGLE_PASSWORD = FIELD_PASSWORD.find(".field__icon");
   const TEXT_COPYRIGHT_YEAR = $(".login .copyright p span");
 
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user) window.location.href = "index.html";
+
   updateCopyrightYear();
 
   THE_FORM.on("submit", (event) => {
@@ -80,7 +83,7 @@ $(document).on("DOMContentLoaded", () => {
     return isPassed;
   }
 
-  function submitLoginForm(form) {
+  function submitLoginForm() {
     BUTTON_SUBMIT.prop("disabled", true);
     BUTTON_SUBMIT.text("Sedang dikirim...");
 
@@ -92,6 +95,15 @@ $(document).on("DOMContentLoaded", () => {
       .then(() => {
         BUTTON_SUBMIT.prop("disabled", false);
         BUTTON_SUBMIT.text("Masuk");
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            name: INPUT_FIELD_USERNAME.val(),
+            gender: "pria",
+            avatar: null,
+            email: "fitrah@gmail.com",
+          })
+        );
         window.location.href = "index.html";
       })
       .catch((error) => {
