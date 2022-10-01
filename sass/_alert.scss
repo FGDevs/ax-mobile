@@ -25,10 +25,12 @@
 
     &.error {
       background-color: $color-primary;
+      border: none;
     }
 
     &.success {
-      background-color: rgb(16, 143, 150);
+      background-color: #108f96;
+      border: none;
     }
 
     &.info {
@@ -48,7 +50,7 @@
 
   &__content {
     flex: 1;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     margin: 0 0.75rem;
   }
 
@@ -56,7 +58,7 @@
     @include centerize;
 
     span.micon {
-      font-size: 1.25rem;
+      font-size: 0.75rem;
       color: #fff;
     }
   }

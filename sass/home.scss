@@ -2,6 +2,7 @@
 @import "./alert";
 @import "./loading";
 @import "./sideMenu";
+@import "./schedule";
 
 body {
   background-color: #eaf3f6;
@@ -76,39 +77,10 @@ body {
       }
     }
 
-    .schedule {
+    .main {
       @include card(0.75rem);
       position: relative;
-      margin-top: 1rem;
-
-      &__loading {
-        position: relative;
-        height: 100px;
-      }
-
-      // .schedule {
-      //   &__title {
-      //     font-size: 0.82rem;
-      //     font-weight: 500;
-      //   }
-
-      //   &__time {
-      //     display: flex;
-      //     justify-content: space-between;
-      //     margin-top: 0.75rem;
-
-      //     .title {
-      //       font-size: 0.85rem;
-      //     }
-
-      //     .detail {
-      //       .micon {
-      //         font-size: 0.85rem;
-      //         color: #999;
-      //       }
-      //     }
-      //   }
-      // }
+      margin-top: 0.75rem;
     }
 
     .history {
@@ -137,7 +109,7 @@ body {
             margin-top: 0.25rem;
             font-size: 0.75rem;
             font-weight: 300;
-            color: #999;
+            color: $color-gray500;
           }
         }
       }

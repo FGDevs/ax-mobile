@@ -3,7 +3,7 @@ const ELS_HOME = {
   TEXT_NAME_USER: () => $(".user__name"),
   TEXT_NAME_GENDER: () => $(".user__gender"),
   TEXT_DATE_ATTENDANCE: () => $(".date__now"),
-  SECTION_SCHEDULE: () => $(".schedule"),
+  SECTION_SCHEDULE: () => $("#home-schedule"),
 };
 
 const GENDER_MAP = {
@@ -16,7 +16,7 @@ $(document).on("DOMContentLoaded", () => {
   setHeaderUser();
   setDateNow();
   getSchedule();
-  _registerHomeListeners();
+  registerHomeListeners();
 });
 
 function getUser() {
@@ -50,7 +50,7 @@ function setDateNow() {
   TEXT_DATE_ATTENDANCE().text(formatDateFull(day, date, month, year));
 }
 
-function _registerHomeListeners() {
+function registerHomeListeners() {
   const { BUTTON_TOGGLE_PROFILE } = ELS_HOME;
 
   BUTTON_TOGGLE_PROFILE().on("click", () => {
@@ -62,22 +62,17 @@ function getSchedule() {
   const { SECTION_SCHEDULE } = ELS_HOME;
   new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(mockSchedule());
+      resolve($mock_schedule());
     });
   }).then((result) => {
-    makeScheduleCard(SECTION_SCHEDULE(), result, { isLoading: true });
+    const { attend_start_at } = result;
+
+    if (attend_start_at) {
+      $sch_hideLoading(SECTION_SCHEDULE());
+      $sch_showAttended(SECTION_SCHEDULE(), result);
+    } else {
+      $sch_hideLoading(SECTION_SCHEDULE());
+      $sch_showUnattended(SECTION_SCHEDULE(), result);
+    }
   });
-}
-
-function _simulateUser(user) {
-  if (user) return;
-
-  localStorage.setItem(
-    "user",
-    JSON.stringify({
-      name: "Fitrah Pratama",
-      gender: "male",
-    })
-  );
-  getUser();
 }

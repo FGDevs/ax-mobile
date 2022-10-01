@@ -1,0 +1,220 @@
+.schedule[data-status="loading"] {
+  position: relative;
+  height: 100px;
+}
+
+.schedule[data-status="start"] {
+  .title {
+    font-size: 0.825rem;
+    font-weight: 500;
+  }
+  .time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+
+    [data-type="start"] {
+      .detail {
+        justify-content: flex-start;
+        color: $color-green500;
+      }
+    }
+    [data-type="end"] {
+      .title {
+        text-align: right;
+      }
+      .detail {
+        justify-content: flex-end;
+        color: $color-primary;
+      }
+    }
+
+    .title {
+      font-size: 0.675rem;
+      font-weight: 300;
+      color: #999;
+      margin-bottom: 0.25rem;
+    }
+
+    .detail {
+      display: flex;
+      align-items: center;
+
+      em.micon {
+        font-size: 0.75rem;
+        color: #999;
+        margin-right: 0.25rem;
+      }
+      .hour {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  .action {
+    padding: 0.75rem;
+    margin-top: 0.75rem;
+    background-color: $color-pink;
+    color: $color-primary;
+    font-size: 0.75rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    font-weight: 500;
+
+    &:disabled {
+      background-color: $color-gray100;
+      color: $color-gray500;
+    }
+  }
+}
+
+.schedule[data-status="end"] {
+  padding: 0.5rem;
+
+  .divider {
+    margin: 1rem 0;
+    border-top: 2px solid $color-gray100;
+  }
+
+  .checkin {
+    .head {
+      @include centerize(space-between);
+
+      &__title {
+        font-size: 0.875rem;
+        letter-spacing: -0.2px;
+        font-weight: 500;
+        color: $color-green500;
+      }
+
+      &__checkin {
+        font-size: 0.75rem;
+        color: #fff;
+        padding: 0.175rem 0.5rem;
+        border-radius: 0.5rem;
+      }
+    }
+
+    .body {
+      @include centerize(space-between);
+
+      &__container {
+        margin-top: 0.5rem;
+
+        .title {
+          font-weight: 300;
+          font-size: 0.75rem;
+          color: $color-gray500;
+          margin-bottom: 0.25rem;
+        }
+
+        .detail {
+          display: flex;
+          align-items: center;
+
+          em.micon {
+            font-size: 0.875rem;
+            color: $color-gray500;
+            margin-right: 0.325rem;
+          }
+
+          .hour {
+            font-size: 0.875rem;
+            line-height: 1;
+          }
+        }
+
+        &[data-type="result"] {
+          .detail {
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+
+    &[data-status="ontime"] {
+      #sch-checkin-status {
+        background-color: $color-green500;
+      }
+      #sch-checkin-result {
+        color: $color-green500;
+      }
+    }
+
+    &[data-status="late"] {
+      #sch-checkin-status {
+        background-color: $color-primary;
+      }
+      #sch-checkin-result {
+        color: $color-primary;
+      }
+    }
+  }
+
+  .checkout {
+    .head {
+      @include centerize(space-between);
+
+      &__title {
+        font-size: 0.875rem;
+        letter-spacing: -0.2px;
+        font-weight: 500;
+        color: $color-primary;
+      }
+    }
+
+    .body {
+      @include centerize(space-between);
+
+      &__container {
+        margin-top: 0.5rem;
+
+        .title {
+          font-weight: 300;
+          font-size: 0.75rem;
+          color: $color-gray500;
+          margin-bottom: 0.25rem;
+        }
+
+        .detail {
+          display: flex;
+          align-items: center;
+
+          em.micon {
+            font-size: 0.875rem;
+            color: $color-gray500;
+            margin-right: 0.325rem;
+          }
+
+          .hour {
+            font-size: 0.875rem;
+            line-height: 1;
+            color: $color-primary;
+          }
+        }
+
+        &[data-type="result"] {
+          .detail {
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+  }
+
+  .action {
+    padding: 0.75rem;
+    margin-top: 0.75rem;
+    background-color: $color-pink;
+    color: $color-primary;
+    font-size: 0.75rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    font-weight: 500;
+
+    &:disabled {
+      background-color: $color-gray100;
+      color: $color-gray500;
+    }
+  }
+}

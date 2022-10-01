@@ -1,7 +1,7 @@
 const ALERT = $(`
   <div class="alert">
     <div class="alert__box">
-      <p class="alert__icon micon"></p>
+      <p class="alert__icon micon-o"></p>
       <p class="alert__content"></p>
       <button class="alert__close">
         <span class="micon">close</span>
